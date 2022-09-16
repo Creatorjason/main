@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0
+        }
+        #body{
+            background-image:linear-gradient(50deg, white, pink, rgb(36, 156, 221));
+            /* background-color:pink; */
+            background-position: center; 
+            background-repeat: no-repeat;
+            background-size:cover; 
+            position:relative; 
+         
+        }
+        #container-all{
+            display: flex;
+            /* max-width: 10%; */;
+            height:200vh;
+            background-color:transparent;
+            /* overflow-y:hidden; */
+            flex-wrap:wrap;
+           
+
+        }
+         /* .restrain{
+            max-height: 5vh;
+        }  */
+        #female{
+            border: 0px solid black;
+            border-radius: 20px;
+            height: auto;
+            width: 200px;
+            margin-left:12px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:space-between;
+            background-color:rgb(238, 117, 137);
+            animation: bounce 2s;
+            animation-direction: alternate;
+            animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+            animation-iteration-count: infinite;
+
+        }
+       
+        #female:hover{
+            animation: bounce 0s;
+        }
+        @keyframes bounce {
+            from {
+                transform: translate3d(0, 0, 0);
+            }
+            to {
+                transform: translate3d(0, 10px, 0);
+            }
+        }
+        #male{
+            border: 0px solid black;
+            border-radius: 20px;
+            margin-left:12px;
+            height: auto;
+            width: 200px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:space-between;
+            background-color:rgb(36, 156, 221);
+            animation: bounce 2s;
+            animation-direction:alternate-reverse;
+            animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+            animation-iteration-count: infinite;
+        } 
+        .hid_path{
+            color:white;
+            display:inline-block;
+            word-wrap:break-word;
+            display:none;
+        }
+        #end_info{
+            color: rgb(16, 183, 16);
+            font-weight: bolder;
+        }
+        #male:hover{
+            animation: bounce 0s;
+        }
+        #male .avatar{
+            border: 0px solid black;
+            border-radius: 100px;
+            height: 50px;
+            width: 50px;
+            margin-top:12px;
+            background-image: url("naruto.png");
+            background-size: cover;
+        }
+        #female .avatar{
+        border: 0px solid black;
+        border-radius: 100px;
+        height: 50px;
+        width: 50px;
+        margin-top:12px;
+        background-image: url("mikasa.jpeg");
+        background-size: cover;
+    }
+        .reward{
+            border: 1px solid white;
+            border-radius: 12px;
+            color:white;
+            height: 25px;
+            width: 170px;
+            margin-top:12px;
+            text-align:center;
+            box-shadow: 2px 0px 8px white;
+            padding-left: 2px;
+    
+            
+        }
+        .info{
+            border: 1px solid white;
+            border-radius: 12px;
+            height: 100px;
+            width: 170px;
+            margin-top:12px;
+            box-shadow: 2px 0px 8px white;
+            background-color:white;
+            padding: 7px;
+            
+        }
+        .btn{
+            border: 1px solid white; 
+            margin-top:12px;
+            border-radius: 12px;
+            width: 80px;
+            height: 25px;
+            margin-bottom: 12px;
+            box-shadow: 2px 0px 8px white;
+            background-color:rgb(225, 22, 56);
+            text-align:center;
+            color:white;
+        }
+    #header{
+            width:100%;
+            height:170px;
+            border: 0px solid white;
+            margin-bottom: 13px;
+            box-shadow: 2px 0px 8px white;
+            background-color: white;
+            text-align:center;
+            background-image:linear-gradient(50deg, white, pink, rgb(36, 156, 221));
+           
+
+        }
+    #header h1{
+        color:#ffffff;
+        font-size: 70px;
+        text-shadow: 2px 2px 5px red;
+        animation: text 2s;
+        animation-direction:alternate;
+        animation-iteration-count: infinite;
+
+    }
+    @keyframes text {
+            0%{
+                text-shadow: 2px 2px 5px red;
+            }
+            50%{
+                text-shadow: 2px 2px 5px yellow;
+            }
+            100% {
+                text-shadow: 2px 2px 5px green;
+            }
+        }
+    #header h4{
+        color:rgb(73, 84, 208);
+        font-size:larger;
+        font-family:cursive;
+        word-spacing: 20px;
+    }
+    #input{
+            padding:5px;
+            border-radius:10px;
+        }
+    #header #input{
+            float:right;
+            margin-right:15px;
+            margin-top:20px
+        }
+    #body .container-popup{
+             width: 100%;
+             height: 100%;
+             background: #3c5077;
+             display: flex;
+             align-items: center;
+             justify-content:center;
+        }
+    .popup{
+            width:400px;
+            height:auto;
+            background: black;
+            border-radius:15px;
+            position: fixed;
+            box-shadow:2px 0px 8px white;
+            top:0;
+            left:50%;
+            visibility: hidden;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 0 10px 20px 10px ;
+            color:white;
+            transition: transform 0.4s, top 0.4s;
+            word-wrap: break-word;
+            text-overflow: ellipsis;
+            background-image: linear-gradient(50deg, white, pink, rgb(36, 156, 221));
+        }
+        .open-popup{
+            visibility: visible;
+            top:50%;
+            transform: translate(-50%, -50%) scale( 1);
+        }
+        .popup-btn{
+            border-radius : 20px;
+            padding: 5px;
+            background-color:rgb(36, 156, 221);
+            color:white
+        }
+      
+    </style>
+</head>
+<body id="body">
+    <div id="header">
+        <h1>Welcome to Block Tinder</h1>
+        <h4>Make new friends the blockchain style</h4>
+      
+        <input type="text" placeholder="Search user_name.." id="input">
+    </div>
+    <div id="container-all">
+    <div class="restrain">
+        <div id="female">
+         <div class="avatar">
+        </div>
+        <p class="hid_path">${i["temp_path_id"]}</p>
+         <div class="info">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+            Nam massa odio.
+        </div>
+        <div class="reward">
+        💙 15000 ANTC
+        </div>
+      <button onclick="openPopup()" class="btn">
+                 Save💪
+        </button>
+        </div>
+        <br>
+         </div> 
+          
+         
+         <div class="restrain">
+            <div id="male">
+             <div class="avatar">
+            </div>
+            <p class="hid_path" id="m">${i["temp_path_id"]}</p>
+             <div class="info">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+                Nam massa odio. 
+            </div>
+            <div class="reward">
+            💙 5000 ANTC
+            </div>
+             <div onclick="openPopup()" class="btn">
+                     Save💪
+            </div>
+            </div>
+            <br>
+             </div>   
+             
+                
+             <div class="restrain">
+                <div id="female">
+                 <div class="avatar">
+                </div>
+                <p class="hid_path" id="m">${i["temp_path_id"]}</p>
+                 <div class="info">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+                    Nam massa odio. 
+                </div>
+                <div class="reward">
+                💙 10000 ANTC
+                </div>
+                 <div onclick="openPopup()" class="btn">
+                         Save💪
+                </div>
+                </div>
+                <br>
+                 </div>   
+
+                 <div class="restrain">
+                    <div id="male">
+                     <div class="avatar">
+                    </div>
+                    <p class="hid_path" id="m">${i["temp_path_id"]}</p>
+                     <div class="info">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+                        Nam massa odio.  
+                    </div>
+                    <div class="reward">
+                    💙 11000 ANTC
+                    </div>
+                     <div onclick="openPopup()" class="btn">
+                             Save💪
+                    </div>
+                    </div>
+                    <br>
+                     </div>   
+
+                     <div class="restrain">
+                        <div id="female">
+                         <div class="avatar">
+                        </div>
+                        <p class="hid_path" id="m">${i["temp_path_id"]}</p>
+                         <div class="info">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+                            Nam massa odio. 
+                        </div>
+                        <div class="reward">
+                        💙 25000 ANTC
+                        </div>
+                         <div onclick="openPopup()" class="btn">
+                                 Save💪
+                        </div>
+                        </div>
+                        <br>
+                         </div>  
+                         <div class="restrain">
+                            <div id="male">
+                             <div class="avatar">
+                            </div>
+                            <p class="hid_path" id="m">${i["temp_path_id"]}</p>
+                             <div class="info">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+                                Nam massa odio. 
+                            </div>
+                            <div class="reward">
+                            💙 50000 ANTC
+                            </div>
+                             <div onclick="openPopup()" class="btn">
+                                     Save💪
+                            </div>
+                            </div>
+                            <br>
+                             </div>   
+
+                             
+                             <div class="restrain">
+                                <div id="female">
+                                 <div class="avatar">
+                                </div>
+                                <p class="hid_path" id="m">${i["temp_path_id"]}</p>
+                                 <div class="info">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                    Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+                                    Nam massa odio. 
+                                </div>
+                                <div class="reward">
+                                💙 19000 ANTC
+                                </div>
+                                 <div onclick="openPopup()" class="btn">
+                                         Save💪
+                                </div>
+                                </div>
+                                <br>
+                                 </div> 
+                                 <div class="restrain">
+                                    <div id="male">
+                                     <div class="avatar">
+                                    </div>
+                                    <p class="hid_path" id="m">${i["temp_path_id"]}</p>
+                                     <div class="info">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                        Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+                                        Nam massa odio. 
+                                    </div>
+                                    <div class="reward">
+                                    💙 35000 ANTC
+                                    </div>
+                                     <div onclick="openPopup()" class="btn">
+                                             Save💪
+                                    </div>
+                                    </div>
+                                    <br>
+                                     </div>  
+
+                                     <div class="restrain">
+                                        <div id="female">
+                                         <div class="avatar">
+                                        </div>
+                                        <p class="hid_path" id="m">${i["temp_path_id"]}<
+                                         <div class="info">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                            Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+                                            Nam massa odio. 
+                                        </div>
+                                        <div class="reward">
+                                        💙 27450 ANTC
+                                        </div>
+                                         <div onclick="openPopup()" class="btn">
+                                                 Save💪
+                                        </div>
+                                        </div>
+                                        <br>
+                                         </div>  
+                                          
+                                         <div class="restrain">
+                                            <div id="male">
+                                             <div class="avatar">
+                                            </div>
+                                            <p class="hid_path" id="m">${i["temp_path_id"]}<
+                                             <div class="info">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                                Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+                                                Nam massa odio. 
+                                            </div>
+                                            <div class="reward">
+                                            💙 12567 ANTC
+                                            </div>
+                                             <div onclick="openPopup()" class="btn">
+                                                     Save💪
+                                            </div>
+                                            </div>
+                                            <br>
+                                             </div> 
+                                             <div class="restrain">
+                                                <div id="female">
+                                                 <div class="avatar">
+                                                </div>
+                                                <p class="hid_path" id="m">${i["temp_path_id"]}<
+                                                 <div class="info">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                                    Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+                                                    Nam massa odio. 
+                                                </div>
+                                                <div class="reward">
+                                                💙 70000 ANTC
+                                                </div>
+                                                 <div onclick="openPopup()" class="btn">
+                                                         Save💪
+                                                </div>
+                                                </div>
+                                                <br>
+                                                 </div>  
+                                                 <div class="restrain">
+                                                    <div id="male">
+                                                     <div class="avatar">
+                                                    </div>
+                                                    <p class="hid_path" id="m">${i["temp_path_id"]}<
+                                                     <div class="info">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                                        Quisque nisl erat, egestas et sem vitae, pulvinar tincidunt est. 
+                                                        Nam massa odio. 
+                                                    </div>
+                                                    <div class="reward">
+                                                    💙 35000 ANTC
+                                                    </div>
+                                                     <div onclick="openPopup()" class="btn">
+                                                             Save💪
+                                                    </div>
+                                                    </div>
+                                                    <br>
+                                                     </div>  
+                                                      
+                                              
+                                          
+                                 
+                                         
+                         
+                            
+                     
+                        
+                 
+                    
+
+        </div>
+        
+    <script>
+        const get_all = async () =>{
+            let response = await fetch("http://127.0.0.1:8000/get_all_blocks")
+            let data = await response.json()
+            for (i of data){
+                if (i["gender"] === "male"){
+                    console.log(i)
+                    let block = `
+            <div class="restrain">
+            <div id="female">
+             <div class="avatar">
+            </div>
+            <p class="hid_path">${i["temp_path_id"]}</p>
+             <div class="info">
+                    ${i["description"]}
+            </div>
+            <div class="reward">
+            💙 ${i["bounty"]} ANTC
+            </div>
+   
+         <button onclick="openPopup()" class="btn">
+                     Save💪
+            </button>
+            </div>
+            <br>
+             </div>      
+            
+            `
+        document.getElementById("container-all").innerHTML += block
+        
+                }
+                else{
+                    let block = `
+        <div class="restrain">
+        <div id="male">
+         <div class="avatar">
+        </div>
+        <p class="hid_path" id="m">${i["temp_path_id"]}</p>
+         <div class="info">
+            ${i["description"]}
+        </div>
+        <div class="reward">
+        💙 ${i["bounty"]} ANTC
+        </div>
+         <div onclick="openPopup()" class="btn">
+                 Save💪
+        </div>
+        </div>
+        <br>
+         </div>      
+        
+        `
+    document.getElementById("container-all").innerHTML += block
+                }
+            }
+        }
+        get_all()
+
+
+
+    </script>   
+    </div>
+    <div class="container-pop">
+    <div class="popup" id="popup">
+        <h2>Mine</h2>
+        <br>
+             
+         <form> 
+        <input id="inner"  type="text"  placeholder="Paste your cell_id"  onpaste="capture()" >
+        <button class="popup-btn" type="button" onclick="verify_cell_id()" disabled>Verify</button>
+        </form> 
+        <br>
+        <p style="color:black" ><output id="output"></output></p>
+        <br>
+        <p id = "nonce" style="color:red" >-</p>
+        <br>
+        <button class="popup-btn" id="active" type="button" onclick="startMining()" >Mine</button>
+        <!-- <p id=""end_info></p> -->
+        </div>
+        </div>
+       
+                
+    <script>
+    
+
+function AltBgImg() {
+    if (!document.getElementById) return false;
+
+    var MyElement = "body" 
+    var ImgPath = "../web/block_tinder_bg/" 
+
+
+    if (!document.getElementsByTagName(MyElement)) return false;
+
+    var random_images = new Array ();
+    random_images[0] = "bg1.jpg"; // these are the background images
+    random_images[1] = "bg2.png"; 
+    random_images[2] = "bg3.jpg"; 
+    random_images[3] = "bg4.jpg"; 
+    random_images[5] = "bg5.jpg";
+    random_images[6] = "bg6.jpg";
+    random_images[7] = "bg7.jpg";
+    random_images[8] = "bg8.jpg";
+    random_images[9] = "bg9.jpg";
+    random_images[10] = "bg10.jpg";
+    random_images[11] = "bg11.jpg";
+    random_images[12] = "bg12.jpg";
+    random_images[13] = "bg13.jpg";
+    random_images[14] = "bg14.jpg";
+    random_images[15] = "bg15.jpg";
+    random_images[16] = "bg16.jpg";
+    random_images[17] = "bg17.jpg";
+    random_images[18] = "bg18.jpg";
+    random_images[19] = "bg19.jpg";
+    random_images[20] = "bg20.jpg";
+    random_images[21] = "bg21.jpg";
+    random_images[22] = "bg22.jpg";
+    random_images[23] = "bg23.jpg";
+    random_images[24] = "bg24.jpg";
+    random_images[25] = "bg25.jpg";
+    random_images[26] = "bg26.jpg";
+
+
+    var $header = document.getElementById(MyElement);
+    var $backgroundurl = $header.style.backgroundImage;
+    var ImgURL = "url(" + ImgPath + random_images[rand(random_images.length)] + ")";
+
+    if ($backgroundurl != ImgURL) {
+        $header.style.backgroundImage = ImgURL; 
+    }
+
+    movement = setTimeout("AltBgImg()",5000); 
+}
+function rand(n) {
+    return Math.floor(Math.random() * (n))
+}
+function addLoadEvent(func) {
+    var winonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            winonload();
+            func();
+        }
+    }
+}
+addLoadEvent(AltBgImg);
+</script>
+<script>
+    let popup = document.getElementById('popup')
+    const openPopup = () => {
+         popup.classList.add("open-popup");
+    }
+    const closePopup = () => {
+         popup.classList.remove("open-popup");
+    }
+</script>
+<script>
+    const capture = () =>{
+       return false
+
+    }
+    async function verify_cell_id(){
+        cell_id = document.getElementById("inner").value
+        // console.log(cell_id)
+       if (cell_id.length == 64){
+            response = await fetch("http://127.0.0.1:8000/get_block/" + cell_id)
+            data = await response.json()
+            if (data.length > 0){
+                document.getElementById("active").disabled = false
+                console.log("Connected")
+                // console.log(document.getElementById("m").value)
+            }
+            else{
+                console.log("Unable to connect")
+            }
+        }
+    } 
+    async function update_data(){
+        response = await fetch("http://127.0.0.1:8000/update_owner",{
+            method: 'POST',
+            body: JSON.stringify({
+                miner_cell_id: `${document.getElementById("inner").value}`,
+                nonce : 28721,
+                bounty : 15000,
+
+            }),
+            headers:{
+        "Content-type":"application/json; charset=UTF-8"}
+        })
+        if (response.status === 200){
+            
+            window.alert("Thank you for trying out the demo of block tinder💃💃🥰🥰😘. Have fun connecting.")
+      
+        }
+    } 
+   
+    let hash_worker;
+    
+    function startMining() {
+      if(typeof(hash_worker) == "undefined") {
+        hash_worker = new Worker("bundle.js");
+      }
+      hash_worker.onmessage = function(event) {
+        document.getElementById("output").innerHTML = event.data[0];
+        document.getElementById("nonce").innerHTML = `- ${event.data[1]} ANTC`;
+        if((event.data[0]).substring(0,4) == "0000"){ 
+            update_data()
+           setTimeout( closePopup, 10000);
+
+      };
+    }
+}
+    </script>
+    
+    
+</body>
+</html>

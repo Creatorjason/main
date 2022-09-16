@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="form.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0
+        }
+    .container{
+    background-image:url("bgstatic.gif");
+    display: flex;
+    justify-content:center;
+    align-content:center ;
+    margin:0;
+    padding:0
+
+  }
+  .cover{
+    position: absolute;
+    top:15%;
+    left:7%;
+    background-image: linear-gradient(50deg, white, pink, rgb(36, 156, 221));;
+    height:auto;
+    border:1px solid black;
+    border-radius:40px;
+    width:60vw;
+    padding: 10px 0 10px 0;
+    
+  }
+  .form-container{
+    position:relative;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: white;
+    width:70%;
+    color: black;
+    text-align: center;
+    margin-top: 45px;
+    padding-left: 50px;
+    padding-right: 50px;
+    overflow-y: auto;
+  }
+  .btn{
+            padding: 10px 60px;
+            background: #fff;
+            border:0;
+            outline:none;
+            cursor:pointer;
+            font-size: 22px;
+            font-weight:500;
+            border-radius: 30px;
+        }
+   input[type=text]{
+    width: 50vw;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block; 
+    border: none;
+    background: #f1f1f1;
+  } 
+    </style>
+</head>
+<body>
+    <div class="container">
+         
+        <div class="form-container">
+            <br>
+            <h2>Try out Block Tinder</h2>
+            <p id="err_all" style="color:red"></p>
+
+            <div class="cover"> 
+            <form>
+                <label>Enter your cell ID</label>
+                <br>
+                <input type="text" id="cell" placeholder="your cell ID" autofocus required>
+
+                <br>
+                <label>Enter your favorite word</label>
+                <br>
+                <input type="text"  id="fav"  placeholder=" your favorite word" required>
+                <p id="err_fav" style="color:red"></p>
+                <br>
+                <label for="vol">Adjust difficulty:</label>
+                <br>
+                <input type="range" id="vol" name="vol" min="1" max="6">
+                <br>
+                <br>
+                <!-- <input type="radio" id="male" required> -->
+                <!-- <label for="male">Male</label>&nbsp; -->
+                <!-- <input type="radio" id="female" > -->
+               <!-- <label for="female">Female</label>  -->
+               <label for="cars">Select gender:</label>
+               <select id="gender">
+                <option>male</option>
+                <option>female</option>
+               </select>
+               <p id="err" style="color:red"></p>
+               <br>
+                <br>
+                <label>Tell your friends a message</label>
+                <br>
+                <textarea name="message" rows="10" cols="30" maxlength="100" id="area" required></textarea>
+                <br>
+               
+                <br>
+                <button type="button" class="btn" onclick="handle()">Submit</button>
+            </form>
+       
+        </div>
+     
+        </div>
+    </div>
+</body>
+</html>

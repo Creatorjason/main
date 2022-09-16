@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-image:linear-gradient(100deg, white, pink, rgb(36, 156, 221)); 
+        }
+        #header{
+            border: 0px solid black;
+            height: auto;
+            background-color: white;
+            box-shadow: 0 0 10px 0 white;
+            text-align:center;
+            
+        }
+        #heading{
+            color: rgba(6, 123, 158, 0.754);
+            /* margin-bottom:90px; */
+            font-size: xx-large;
+
+        }
+        /* #header #btn-con{
+            background-color: transparent;
+            height: 95px
+            
+        } */
+        button{
+            border-radius: 40px;
+            margin-bottom: 20px;
+            background-color: rgb(36, 156, 221);
+            padding:10px;
+            margin-right:10px;
+            width:150px;
+            color:black;
+        }
+        a{
+            text-decoration:none;
+        }
+        .content{
+            width: 70%;
+            height:auto;
+            /* border: 1px solid black; */
+            margin-left:auto;
+            margin-right:auto;
+            background-color:white;
+            padding:30px;
+        }
+        .content img{
+            margin-top:20px; 
+            margin-left:100px; 
+        }
+    </style>
+</head>
+<body >
+   
+    <div id="header">
+        <div id="heading">
+         <h2>💃💃🥰🥰😘Block Tinder💃💃🥰🥰😘</h2>
+        </div>
+        
+        <div id="btn-con">
+            <br>
+        <br>
+        <br>
+        <button><a href="https://antichain.netlify.app/create-cell.html">Generate Cell Id</a></button>&nbsp;
+        <button><a href="#">Create Block</a></button>
+    </div>
+    <hr>
+    </div>
+    <div class="content">
+        <h2>Hello✌🏼,</h2>
+        <p>So glad to have you here checking out this project, as part of my ongoing research on <a href="https://antichain.netlify.app">AntiChains</a>. I have decided to 
+        put together this fun project BLOCK TINDER.
+        Originally the idea for a side project was to build a data storage system where users can store personal information, have the information 
+        inserted into a block and appended to the AntiChain, the idea is to make whosever is interested in retrieving the information able to,
+        as long as they are authorized, to perform a series of mathematical computation in this case computing a block hash 
+        below a target value (same as Bitcoin), as opposed to Bitcoin which requires you to perform mathematical computation to append to the blockchain.
+        When the required  hash value is generated you then can access  the secret message, the goal is to make it easy to append,
+        difficult to remove.
+        So Block Tinder is a peek into one of the use case of an Antichain, basically instead of storing secret messages now (users will be able to later), users can
+        create a block, set its difficult, add their profile picture, and a brief description about themselves, the user is required to pay a deployment fee to have their
+        block appended to the chain. 
+        Other users can try to mine your block, the miner gets to receive your deployment fee as reward for mining, while the system deducts the mining fee (nonce * 1 antc) from the miners account 
+        . Since you set the difficulty level for your block, you will be required to pay more to deploy to chain, for instance if you have a difficulty of 2, you are required to pay 5000 antc and so on.
+        For miners, let's say it takes 20,0000 nonces to mine the block, you are to pay it's equivalent which is 20,000 ANTC,
+        at the end of the whole process, the block is removed from the chain and you become friends with the "minee😎".
+            <br>
+            <img src="screen_shot_1.png" width="700px">
+            <i><p style="text-align:center">Screenshot of Block Tinder</p></i>
+            <br>
+        As development is still underway, I decided to share this funny version of Tinder done the blockchain way using "PROOF OF WORK".
+        <h3>To get started:</h3>
+        Check out Block Tinder <a href="blocktinder.html">here</a>
+        <br>
+        If you don't have a cell id, go to <a href="https://antichain.netlify.app/create-cell.html">AntiChain</a> generate one or click the "Generate cell id" at the top of this page,
+        With your generated cell id, you can create a block.<br>
+        Happy Block Tindering...<br>
+        If you have any suggestions kindly reach out to me at jasonabbatheleast@gmail.com
+        <h3>Mining a block for friendship</h3>
+        <p>To do so you should have your block on the chain for now, just simply paste in your cell id, click verify, if it is verified the mine button becomes active, then you can mine.</p>
+        <h3>Disclaimer:</h3>
+        <p>This is a demo, please do not upload your personal information on this project, as I cannot guarantee the safety of such information.
+        </p>
+
+    </p>
+    </div>
+</body>
+</html>
